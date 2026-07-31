@@ -87,7 +87,7 @@ array_push($baralho, $c6);
 array_push($baralho, $c7);
 
 $cartaSorteada = $baralho[array_rand($baralho)];
-$pontos = 7;
+$pontos = 7; //Inicia a pontuacao
 
 echo "Cartas disponíveis:\n";
 
@@ -101,16 +101,16 @@ do{
 
     $palpite = readline("Escolha uma carta: \n");
 
-    if($palpite == $cartaSorteada->getNum() and $pontos >= 0){
+    if($palpite == $cartaSorteada->getNum()){
         echo "Voce acertou!\n";
         echo "\nA carta sorteada era " . $cartaSorteada;
         $acertou = true;
-        echo "\n sua pontuacao: " . $pontos . "\n";
+        echo "\n sua pontuacao: " . $pontos . "\n"; //exibe os pontos
     }
     
     else{
         echo "Tente novamente, voce errou\n";
-        $pontos --;
+        $pontos --; //a cada erro, perde pontos
     }
 
 }
